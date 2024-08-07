@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1b2735, #090a0f 100%);
+    overflow: hidden;
+}
+
+.head {
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+form {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.message p, .post p, .post h4 {
+    margin: 5px 0;
+    color: white;
+}
+
+#boardicon{
+	width: 60px;
+	height: 60px;
+	
+}
+
+#letter{
+	width: 60px;
+	height: 60px;
+}
+
+.login{
+	position: relative;
+    color: white;
+	left: 77%;
+}
+
+.ida{
+	position: relative;
+	left: 10px;
+	padding: 5px;
+}
+
+.pw{
+	padding: 5px;
+}
+
+.snow{
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    background: white;
+    border-radius: 50%;
+    animation: snow 10s linear infinite;
+}
+
+
+.snow:nth-of-type(2n){
+    width: 7px;
+    height: 7px;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.snow:nth-of-type(2n+1){
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.snow:nth-of-type(9n){
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+
+@keyframes snow{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    20%{
+        opacity: 1;
+        transform: translate(-20px, 20vh);
+    }
+    40%{
+        opacity: 1;
+        transform: translate(20px, 40vh);
+    }
+    60%{
+        opacity: 1;
+        transform: translate(-20px, 60vh);
+    }
+    80%{
+        opacity: 1;
+        transform: translate(0, 80vh);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(100vh);
+    }
+
+
+}
+

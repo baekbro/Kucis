@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kusis</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="snow"></div>
+    <div class="head">
+        <h1>비속어 탐지 테스트웹</h1>
+        <nav>
+            <ul>
+                <li><a href="#message">쪽지</a></li>
+                <li><a href="#community">게시판</a></li>
+            </ul>
+        </nav></div>
+        <div class="login">
+            ID: <input type="text" class="ida">
+            <br>
+            PW: <input type="password" class="pw">
+            <button onclick="location.href='login.html'">login</button>
+        </div>
+        <div id="posts">
+            <h3>게시물</h3>
+            <div class="post">
+                <h4>게시물 제목 1</h4>
+                <p>게시물 내용이 여기에 표시됩니다.</p>
+                <button onclick="location.href='board.html'">작성</button>
+            </div>
+        </div>
+    <script>
+        function createsnow(){
+            const el = document.createElement("div");
+            el.classList.add('snow');
+            el.style.marginLeft = randomposition() + 'px';
+            document.body.appendChild(el);
+        }
+        function randomposition(){
+            return Math.floor(Math.random() * window.innerWidth);
+        }
+        for (let i = 0; i<300; i++){
+            createsnow();
+        }
+    </script>
+</body>
+</html>
