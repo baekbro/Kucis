@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kucis</title>
+    <title>커뮤니티 웹페이지</title>
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <div class="header">
         <h1>비속어 탐지 테스트웹</h1>
         <nav>
             <ul>
@@ -15,26 +16,21 @@
                 <li><a href="#community">게시판</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
-        <div class="login">
-            ID: <input type="text" class="ida">
-            <br>
-            PW: <input type="password" class="pw">
-            <button onclick="location.href='login.html'">login</button>
+    </div>
+    <div class="login">
+        <div><span>ID:</span> <input type="text" class="ida"></div>
+        <div><span>PW:</span> <input type="password" class="pw"></div>
+        <div class="button-container">
+            <button onclick="location.href='login.html'">로그인</button>
         </div>
-        <div id="posts">
-            <h3>게시물</h3>
-            <div class="post">
-                <h4>게시물 제목 1</h4>
-                <p>게시물 내용이 여기에 표시됩니다.</p>
-                <button onclick="location.href='board.html'">작성</button>
-            </div>
+    </div>
+    <div id="posts">
+        <h3>게시물</h3>
+        <div class="post">
+            <h4>게시물 제목 1</h4>
+            <p>게시물 내용이 여기에 표시됩니다.</p>
+            <button onclick="location.href='board.html'">작성</button>
         </div>
-        </section>
-    </main>
-
-    <script>
-    </script>
+    </div>
 </body>
 </html>
