@@ -1,112 +1,156 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(134, 131, 131);
+    background-color: #f5f5f5;
 }
 
-header {
-    background-color: rgb(134, 131, 131);
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+.header {
+    background-color: #fff;
+    padding: 22px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
 }
+
+.KU{
+    color: #333;
+    font-size: 60PX;
+    position: absolute;
+    top: -55%;
+    left: 1%;
+    font-weight: bold;
+}
+
+.header h1 {
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+}
+
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: #333;
     text-decoration: none;
+    font-size: 16px;
 }
 
-main {
-    padding: 20px;
-}
-
-h2 {
+.login {
+    position: absolute;
+    top: 10px;
+    right: 50px;
     color: #333;
 }
 
-form {
-    margin-bottom: 20px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-}
-
-form label {
-    display: block;
+.login div {
     margin-bottom: 5px;
 }
 
-form input[type="text"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.login span {
+    display: inline-block;
+    width: 30px; /* 'ID:'와 'PW:'의 고정 폭 */
 }
 
-button {
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.779);
-    color: white;
+.login input[type="text"],
+.login input[type="password"] {
+    width: 150px; /* 입력란의 폭을 동일하게 설정 */
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login .button-container {
+    position: absolute;
+    left: 40px;
+}
+
+.login .button-container2 {
+    position: absolute;
+    left: 140px;
+}
+
+.login button {
+    padding: 5px 10px;
     border: none;
-    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
     cursor: pointer;
 }
 
-form button:hover {
-    background-color: #45a049;
+#posts {
+    padding: 20px;
 }
 
-#messages, #posts {
-    background-color: white;
+.post {
+    background-color: #fff;
+    margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ddd;
+    border-radius: 3px;
 }
 
-.message, .post {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+.post h4 {
+    margin: 0 0 10px;
+    color: #333;
 }
 
-.message p, .post p {
+.post p {
+    margin: 0;
+    color: #555;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message {
+    margin-bottom: 20px;
+}
+
+.message p {
     margin: 5px 0;
+    color: #555;
 }
 
-#boardicon{
-	width: 60px;
-	height: 60px;
-	
+.message strong {
+    color: #333;
 }
 
-#letter{
-	width: 60px;
-	height: 60px;
+/* 커뮤니티 이용규칙 스타일 */
+#community-rules {
+    background-color: #5c5c5c; /* 부드러운 어두운 회색 배경 */
+    color: #f5f5f5; /* 밝은 텍스트 색상 */
+    padding: 20px;
+    border-radius: 8px; /* 모서리를 둥글게 */
+    margin-top: 160PX;
 }
 
-.login{
-	position: relative;
-	left: 77%;
+#community-rules h2 {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.ida{
-	position: relative;
-	left: 9px;
-	padding: 5px;
-}
-
-.pw{
-	padding: 5px;
+#community-rules p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
 }
