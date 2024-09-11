@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <form action="main.html" method="post">
+        <table> 
+            <tr><td><h2>이름</h2></td></tr>
+            <tr><td><input type="text" placeholder="Enter Name" name="name"></td></tr>
+            <tr><td><h2>전화번호</h2></td></tr>
+            <tr><td><input type="text" placeholder="Enter PhoneNumber" name="number"></td></tr>
+            <tr><td><h2>아이디</h2></td></tr>
+            <tr><td><input type="text" placeholder="Enter ID" name="id"></td></tr>
+            <tr><td><h2>비밀번호</h2></td></tr>
+            <tr><td><input type="text" placeholder="Enter PassWord" name="pw"></td></tr>
+            <tr><td><input type="submit" value="가입" onclick="alert('가입 완료!')"></td></tr>
+        </table>
+    </form>
+</body>
+<script>
+    function joinUser() {
+        var form = document.getElementById("join");
+        axios({
+            method: 'post',
+            url: 'http://localhost:8080/member',
+            data: {
+                id: form.id.value,
+                name: form.name.value,
+                email: form.email.value,
+                phoneNumber: form.phoneNumber.value,
+                password: form.password.value
+            }
+        }).then((response) => {
+            return response.data;
+        }).then((data) => {
+
+            console.log(data);
+            //회원 가입이 완료되었습니다.
+            let html = "<h6 class='fw-bold text-center mt-5'>회원가입이 완료되었습니다!</h6>"
+            document.getElementById("contents").innerHTML = html;
+        })
+    }
+</script>
+</html>
