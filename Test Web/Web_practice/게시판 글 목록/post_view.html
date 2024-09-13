@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 보기</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-header {
+            margin-bottom: 20px;
+        }
+
+        .post-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .post-meta {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .post-content {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .form-actions {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffcc00;
+            color: white;
+            cursor: pointer;
+        }
+
+        .comment-section {
+            margin-top: 30px;
+        }
+
+        .comment-section textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="post-header">
+            <div class="post-title" id="postTitle">게시글 제목</div>
+            <div class="post-meta" id="postMeta">익명 | 5분 전</div>
+        </div>
+
+        <div class="post-content" id="postContent">
+            게시글 내용이 여기에 표시됩니다.
+        </div>
+
+        <div class="form-actions">
+            <button onclick="location.href='community.html'">글 목록</button>
+        </div>
+
+        <div class="comment-section">
+            <textarea id="comment" rows="4" placeholder="댓글을 입력하세요."></textarea>
+            <button>댓글 작성</button>
+        </div>
+    </div>
+
+    <script>
+        // URL에서 게시글 ID를 받아옴
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+
+        // 로컬스토리지에서 게시글 목록을 불러옴
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+        // 해당 ID에 맞는 게시글을 찾음
+        const post = posts[postId];
+
+        // 게시글 제목과 내용 표시
+        document.getElementById('postTitle').innerText = post.title;
+        document.getElementById('postMeta').innerText = post.anonymous + ' | ' + new Date().toLocaleTimeString();
+        document.getElementById('postContent').innerText = post.content;
+    </script>
+
+</body>
+</html>
