@@ -5,44 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <link rel="stylesheet" href="signup.css">
+    <script defer src="signup.js"></script> <!-- JavaScript 파일 로드 -->
 </head>
 <body>
-    <form action="main.html" method="post">
-        <table> 
-            <tr><td><h2>이름</h2></td></tr>
-            <tr><td><input type="text" placeholder="Enter Name" name="name"></td></tr>
-            <tr><td><h2>전화번호</h2></td></tr>
-            <tr><td><input type="text" placeholder="Enter PhoneNumber" name="number"></td></tr>
-            <tr><td><h2>아이디</h2></td></tr>
-            <tr><td><input type="text" placeholder="Enter ID" name="id"></td></tr>
-            <tr><td><h2>비밀번호</h2></td></tr>
-            <tr><td><input type="text" placeholder="Enter PassWord" name="pw"></td></tr>
-            <tr><td><input type="submit" value="가입" onclick="alert('가입 완료!')"></td></tr>
-        </table>
-    </form>
+    <div class="signup-container">
+        <h1>KUCIS</h1>
+        <form id="joinForm">
+            <div class="form-group">
+                <label for="id">아이디</label>
+                <div class="input-wrapper">
+                    <input type="text" id="id" name="id" placeholder="아이디를 입력하세요" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pw">비밀번호</label>
+                <div class="input-wrapper">
+                    <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력하세요" required>
+                    <i class="icon-lock"></i>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pw-confirm">비밀번호 재확인</label>
+                <div class="input-wrapper">
+                    <input type="password" id="pw-confirm" name="pw-confirm" placeholder="비밀번호를 다시 입력하세요" required>
+                    <i class="icon-lock"></i>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+            </div>
+            <div class="form-group">
+                <label for="birth">생년월일</label>
+                <div class="birth-inputs">
+                    <input type="text" id="birth-year" name="birth-year" placeholder="년(4자)" required>
+                    <select id="birth-month" name="birth-month" required>
+                        <option value="" disabled selected>월</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <input type="text" id="birth-day" name="birth-day" placeholder="일" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gender">성별</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>성별</option>
+                    <option value="male">남</option>
+                    <option value="female">여</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <input type="submit" value="가입">
+            </div>
+        </form>
+    </div>
 </body>
-<script>
-    function joinUser() {
-        var form = document.getElementById("join");
-        axios({
-            method: 'post',
-            url: 'http://localhost:8080/member',
-            data: {
-                id: form.id.value,
-                name: form.name.value,
-                email: form.email.value,
-                phoneNumber: form.phoneNumber.value,
-                password: form.password.value
-            }
-        }).then((response) => {
-            return response.data;
-        }).then((data) => {
-
-            console.log(data);
-            //회원 가입이 완료되었습니다.
-            let html = "<h6 class='fw-bold text-center mt-5'>회원가입이 완료되었습니다!</h6>"
-            document.getElementById("contents").innerHTML = html;
-        })
-    }
-</script>
 </html>
