@@ -2,92 +2,114 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #333; /* 다크 테마 배경 */
+    color: #fff;
 }
 
 .header {
     background-color: #333;
-    color: white;
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
+.header a.logo {
+    font-size: 30px;
+    color: #ffcc00; /* KUCIS 로고 색상 */
+    font-weight: bold;
     text-decoration: none;
 }
 
-.board-list {
+.separator {
+    border-top: 2px solid #ffcc00; /* 구분선 색상을 노란색으로 */
+    margin-bottom: 20px;
+}
+
+.container {
     width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: #444; /* 다크 테마 컨테이너 배경 */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #333;
+    color: #ffcc00; /* 제목 색상을 노란색으로 변경 */
+    font-size: 24px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.post-item {
+    background-color: #555;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 12px;
-    text-align: center;
-}
-
-thead {
-    background-color: #333;
-    color: white;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-a {
+.post-title a {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffcc00; /* 제목을 노란색으로 */
     text-decoration: none;
-    color: #007bff;
 }
 
-a:hover {
+.post-title a:hover {
     text-decoration: underline;
 }
 
-.actions {
-    margin-top: 20px;
+.post-content {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 12px;
+    color: #999;
+}
+
+.form-actions {
     text-align: right;
+    margin-top: 20px;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 10px;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 효과 전환 시간 설정 */
 }
 
 button:hover {
-    opacity: 0.9;
+    background-color: #ffdd44; /* 마우스 올렸을 때 배경색 밝게 변경 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+
+button:active {
+    background-color: #ffbb00; /* 클릭할 때 배경색을 조금 더 어둡게 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 줄임 */
+}
+
+button.cancel-btn:hover {
+    background-color: #bbbbbb; /* 취소 버튼은 hover 시 연하게 */
+}
+
+button.cancel-btn:active {
+    background-color: #999999; /* 취소 버튼 클릭 시 색상 어둡게 */
+}
+
+
+.no-posts {
+    text-align: center;
+    color: #999;
 }
